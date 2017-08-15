@@ -3,17 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>JEN Stack Code Challenge</title>
-    <script src="vendors/jquery.min.js" charset="utf-8"></script>
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body ng-app= "JokeApp" ng-controller="JokeController as vm">
     <h1>JEN Stack Code Challenge</h1>
     <input type='text' id='whoseJokeIn' placeholder='whose joke' />
     <input type='text' id='questionIn' placeholder='question' />
     <input type='text' id='punchlineIn' placeholder='punchline' />
     <button id='addJokeButton'>Add Joke</button>
     <h2>Jokes:</h2>
-    <div id='outputDiv'>
+    <div ng-repeat="joke in vm.jokes">
+      {{joke.whosejoke}} asks: {{joke.jokequestion}} <strong>Answer:</strong> {{joke.punchline}}
     </div>
   </body>
 </html>
